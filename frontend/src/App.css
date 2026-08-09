@@ -235,3 +235,47 @@ button {
   font-size: 10px;
   opacity: .65;
 }
+.status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+  margin-right: 12px;
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-dot.online {
+  background: #35d07f;
+  box-shadow: 0 0 10px rgba(53, 208, 127, 0.8);
+}
+
+.status-dot.offline {
+  background: #ff3b30;
+}
+
+.status-dot.checking {
+  background: #ffcc00;
+  animation: loved-pulse 1s infinite;
+}
+
+@keyframes loved-pulse {
+  0% {
+    opacity: 0.35;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.35;
+  }
+}
