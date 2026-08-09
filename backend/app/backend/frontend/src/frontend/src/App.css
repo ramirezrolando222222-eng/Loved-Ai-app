@@ -1,0 +1,243 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #080608;
+  font-family: Arial, sans-serif;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+}
+
+.loved-app {
+  min-height: 100vh;
+  color: white;
+  background: #080608;
+}
+
+.loved-header {
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 18px;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: 800;
+}
+
+.header-button {
+  width: 42px;
+  height: 42px;
+  border: 0;
+  border-radius: 50%;
+  color: white;
+  background: rgba(255,255,255,.1);
+}
+
+.discovery {
+  width: 100%;
+  max-width: 520px;
+  margin: auto;
+  padding: 0 12px 90px;
+}
+
+.stories {
+  display: flex;
+  gap: 14px;
+  overflow-x: auto;
+  padding: 8px 4px 18px;
+}
+
+.stories::-webkit-scrollbar {
+  display: none;
+}
+
+.story {
+  flex: 0 0 65px;
+  border: 0;
+  background: transparent;
+  color: white;
+}
+
+.story-ring {
+  width: 62px;
+  height: 62px;
+  padding: 3px;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    #ff2d55,
+    #ff9500
+  );
+}
+
+.story-avatar {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #272127;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.story small {
+  display: block;
+  margin-top: 5px;
+  font-size: 11px;
+}
+
+.add-story span {
+  display: flex;
+  width: 62px;
+  height: 62px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #222;
+  font-size: 28px;
+}
+
+.profile-card {
+  overflow: hidden;
+  border-radius: 28px;
+  background: #161216;
+  box-shadow:
+    0 20px 60px rgba(0,0,0,.45);
+}
+
+.profile-media {
+  position: relative;
+  aspect-ratio: 9 / 14;
+  overflow: hidden;
+}
+
+.video-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(
+      circle at 50% 30%,
+      #71465b,
+      #151015 65%
+    );
+}
+
+.video-placeholder span {
+  display: flex;
+  width: 70px;
+  height: 70px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,.18);
+  backdrop-filter: blur(12px);
+  font-size: 25px;
+}
+
+.profile-gradient {
+  position: absolute;
+  inset: 35% 0 0;
+  background:
+    linear-gradient(
+      transparent,
+      rgba(0,0,0,.9)
+    );
+}
+
+.profile-info {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 20px;
+}
+
+.compatibility {
+  display: inline-block;
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: rgba(255,255,255,.16);
+  backdrop-filter: blur(10px);
+  font-size: 13px;
+}
+
+.profile-info h1 {
+  margin: 12px 0 2px;
+  font-size: 32px;
+}
+
+.profile-info p {
+  margin: 0;
+  opacity: .8;
+}
+
+.interests {
+  display: flex;
+  gap: 7px;
+  margin-top: 12px;
+}
+
+.interests span {
+  padding: 7px 10px;
+  border-radius: 20px;
+  background: rgba(255,255,255,.14);
+  font-size: 12px;
+}
+
+.profile-actions {
+  display: flex;
+  justify-content: space-around;
+  padding: 16px 10px;
+}
+
+.profile-actions button {
+  width: 55px;
+  height: 55px;
+  border: 0;
+  border-radius: 50%;
+  background: #242024;
+  color: white;
+  font-size: 22px;
+}
+
+.profile-actions .like {
+  background: #ff2d55;
+}
+
+.bottom-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 72px;
+  display: flex;
+  justify-content: space-around;
+  background: rgba(15,12,15,.94);
+  backdrop-filter: blur(20px);
+}
+
+.bottom-nav button {
+  border: 0;
+  background: transparent;
+  color: white;
+  font-size: 20px;
+}
+
+.bottom-nav small {
+  display: block;
+  margin-top: 3px;
+  font-size: 10px;
+  opacity: .65;
+}
