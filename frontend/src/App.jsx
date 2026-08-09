@@ -1,10 +1,36 @@
+
+import { useEffect, useState } from "react";
 import "./App.css";
+import { healthCheck } from "./services/api";
 
 function App() {
+  const [apiStatus, setApiStatus] = useState("checking");
+
+  useEffect(() => {
+    healthCheck()
+      .then(() => setApiStatus("online"))
+      .catch(() => setApiStatus("offline"));
+  }, []);
+
   return (
     <div className="loved-app">
+
       <header className="loved-header">
-        <div className="logo">♥ Loved AI</div>
+        <div className="logo">
+          ♥ Loved AI
+        </div>
+
+        <div className="status">
+          <span
+            className={`status-dot ${apiStatus}`}
+          />
+
+          {apiStatus === "online"
+            ? "Online"
+            : apiStatus === "offline"
+              ? "Offline"
+              : "Connecting..."}
+        </div>
 
         <button className="header-button">
           ☰
@@ -40,6 +66,7 @@ function App() {
         <section className="profile-card">
 
           <div className="profile-media">
+
             <div className="video-placeholder">
               <span>▶</span>
             </div>
@@ -66,10 +93,23 @@ function App() {
           </div>
 
           <div className="profile-actions">
-            <button className="pass">✕</button>
-            <button className="like">♥</button>
-            <button className="chat">💬</button>
-            <button className="video">📹</button>
+
+            <button className="pass">
+              ✕
+            </button>
+
+            <button className="like">
+              ♥
+            </button>
+
+            <button className="chat">
+              💬
+            </button>
+
+            <button className="video">
+              📹
+            </button>
+
           </div>
 
         </section>
@@ -77,10 +117,27 @@ function App() {
       </main>
 
       <nav className="bottom-nav">
-        <button>⌂<small>Discover</small></button>
-        <button>♥<small>Matches</small></button>
-        <button>💬<small>Chats</small></button>
-        <button>👤<small>Profile</small></button>
+
+        <button>
+          ⌂
+          <small>Discover</small>
+        </button>
+
+        <button>
+          ♥
+          <small>Matches</small>
+        </button>
+
+        <button>
+          💬
+          <small>Chats</small>
+        </button>
+
+        <button>
+          👤
+          <small>Profile</small>
+        </button>
+
       </nav>
 
     </div>
